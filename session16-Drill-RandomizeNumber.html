@@ -1,0 +1,67 @@
+<html>
+    <head>
+      <style>
+        body{
+            direction: ltr;
+        }
+        .container {
+            width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #030642;
+            text-align: center;
+        }
+        .container h1 {
+            color: #fff;
+        }
+        .container .input-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .container .input-box h4 {
+            color: #fff;
+            margin-top: 30px;
+        }
+        .container .result-box {
+            margin: 30px;
+        }
+        .container .result-box #randomize {
+            color:#030642;
+            background: #6367c1;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+        }
+      </style>
+    </head>
+    <body>
+        <div class="container">
+              <h1>Randomization</h1>
+           <div class="input-box">
+               <h4 id="number1">Number1:</h4>
+               <input id="firstinput" type="text"/>
+           </div>
+           <div class="input-box">
+               <h4 id="number2">Number2:</h4>
+               <input id="secondinput" type="text"/>
+           </div>
+           <div class="result-box">
+                <button id="randomize">Randomize</button>
+                <input id="result"/>
+            </div>
+        </div>
+        <script>
+            document.getElementById("randomize").addEventListener("click", calc);
+            function calc() {
+                var firstInput = parseInt(document.getElementById("firstinput").value);
+                var secondInput = parseInt(document.getElementById("secondinput").value);
+                var random = Math.floor(Math.random() * (secondInput - firstInput + 1)) + firstInput;   
+                document.getElementById("result").value = random;
+                document.getElementById("firstinput") = " ";
+                document.getElementById("secondinput") = " ";
+            }
+        </script>
+    </body>
+</html>
