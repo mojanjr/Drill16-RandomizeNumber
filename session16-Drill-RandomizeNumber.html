@@ -59,8 +59,8 @@
                 var secondInput = parseInt(document.getElementById("secondinput").value);
                 var random = Math.floor(Math.random() * (secondInput - firstInput + 1)) + firstInput;   
                 document.getElementById("result").value = random;
-                document.getElementById("firstinput") = " ";
-                document.getElementById("secondinput") = " ";
+                document.getElementById("firstinput").value = "";
+                document.getElementById("secondinput").value = "";
             }
         </script>
     </body>
